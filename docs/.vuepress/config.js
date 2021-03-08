@@ -1,4 +1,5 @@
 module.exports = {
+  dest: './dist',
   locales: {
     '/': {
       lang: 'zh-Hans-CN',
@@ -12,6 +13,13 @@ module.exports = {
       '/': {
         label: '简体中文',
         nav: [
+          {
+            text: '笔记',
+            ariaLabel: 'Reading notes',
+            items: [
+              { text: 'JavaScript', link: '/notes/JavaScript/' },
+            ]
+          },
           // { text: '笔记', link: '/notes/' },
           { text: 'GitHub', link: 'https://github.com/Zero2015/Front-End-Interview-Notebook' },
         ],

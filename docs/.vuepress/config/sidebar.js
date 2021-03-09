@@ -13,9 +13,9 @@ module.exports = {
 			''
 		],
 		'/about/': [
-			'booklist',
-			'plans',
-			'think'
+			['plans', '行动计划'],
+			['think', '吾日三省'],
+			['booklist', '阅读清单']
 		]
 	}
 }

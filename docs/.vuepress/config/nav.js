@@ -31,9 +31,9 @@ module.exports = {
 			text: '关于',
 			ariaLabel: 'about',
 			items: [
-				{ text: '阅读清单', link: '/about/booklist/' },
-				{ text: '每日计划', link: '/about/plans/' },
+				{ text: '行动计划', link: '/about/plans/' },
 				{ text: '吾日三省', link: '/about/think/' },
+				{ text: '阅读清单', link: '/about/booklist/' },
 			]
 		},
 		{ text: 'GitHub', link: 'https://github.com/Zero2015/notebook' },

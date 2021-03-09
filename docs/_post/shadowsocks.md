@@ -1,6 +1,6 @@
 ---
 title: shadowsocks
-permalink: /:year/:month/:day/:slug
+permalink: '/_posts/:year'
 ---
 
 # shadowsocks

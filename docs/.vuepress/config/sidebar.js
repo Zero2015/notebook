@@ -1,5 +1,8 @@
 module.exports = {
 	'zh_CN': {
+		'weblog': [
+			['', '目录'],
+		],
 		'/notes/': [
 			['', '目录'],
 		],

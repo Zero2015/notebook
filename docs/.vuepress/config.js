@@ -13,7 +13,11 @@ module.exports = {
       '/': {
         label: '简体中文',
         nav: require('./config/nav')['zh_CN'],
-        sidebar: require('./config/sidebar')['zh_CN']
+        sidebar: require('./config/sidebar')['zh_CN'],
+        lastUpdated: '最近更新',
+        dateOptions: {
+          hour12: false
+        }
       },
     }
   },
@@ -21,8 +25,6 @@ module.exports = {
     '.vuepress/config/nav.js',
     '.vuepress/config/sidebar.js'
   ],
-  // 博客永久链接
-  // permalink: "/:year/:month/:day/:slug",
   // vuepress 插件
   plugins: [
     'flowchart'

@@ -1,169 +1,88 @@
-# javascript 面试题汇总
+# 面试题汇总
+
+<!-- HTML 面试题 -->
+## HTML 面试题
+
+- async defer
+
+### 页面导入样式时，使用 link 和 @import 有什么区别？
+
+- 1、`link` 是 HTML 的标签，`@import` 是 CSS 提供的
+- 2、页面加载时，`link` 会被同时加载，而 `@import` 会在样式加载完之后在加载
+- 3、`@import` 不支持 ie5，`link` 没有这个兼容性问题
+- 4、`link` 可以通过js操作DOM动态加载，而 `@import` 则不可以
+
+### 常见的浏览器内核有哪些？
+
+### 当用户通过地址栏输入一个 URL，点击回车之后发生了什么？
+
+<!-- TODO -->
+<!-- 流程图 -->
+
+#### 1、DNS 域名解析流程
+
+- 1、浏览器首先搜索自身的 DNS 缓存
+- 2、搜索操作系统自身的缓存
+- 3、搜索 hosts 文件
+- 4、向本地运营商 DNS 服务器发起域名解析请求
+- 5、本地运营商代浏览器向根服务器发起请求（13台），返回顶级域（如 .com）的 DNS 地址
+- 6、本地运营商向顶级域发起请求，返回域名的 DNS 地址
+- 7、本地运营商向域名 DNS 发起请求，返回域名服务器的IP地址
+- 8、运营商获取到域名IP并返回给操作系统
+- 9、最后操作系统把 IP 地址返回给浏览器并缓存。
+
+#### 2、与服务器建立连接
+http -> https
+
+#### 3、浏览器的解析渲染
+
+
+### 简述前端性能优化
+### 什么是 webp ?
 
 
 
 
-## 简述下原型
+<!-- CSS 面试题 -->
+## CSS 面试题
+- 三栏布局
 
-## 原型链
+<!-- JavaScript -->
+## JavaScript
+
+## 继承
 
 
+- 原型 原型链 继承
 
-
-
-
-## javascript 有几种继承方式？
-
-- 原型链继承
-
-```js
-function Parent(){
-    this.parentName = 'parent';
-}
-
-Parent.prototype.getParentName = function(){
-    return this.parentName;
-}
-
-function Son(){
-    this.sonName = 'son';
-}
-
-// 继承 Parent，也就是重写了 Son 的原型
-Son.prototype = new Parent();
-Son.prototype.getSonName = function(){
-    return this.sonName;
-}
-
-let instance = new Son();
-console.log(instance.getSonName, instance.parentName)
-console.log(Parent.prototype, instance.__proto__)
+- 事件循环 宏任务 微任务  同步 异步
 
 
 
+
+## HTTP
+
+### http 缓存
+- 缓存 强制缓存 协商缓存
+
+### 常见 http 状态码
 
 ```
+200：请求成功
 
+301：永久重定向
+302: 临时重定向
+304：缓存
 
+404：请求失败
 
-- 借用构造函数
-- 组合继承
-- 原型式继承
-- 寄生式继承
-- 寄生组合式继承
-- ES6 class 继承
-
-## new 操作符原理是什么？模拟实现。
-
-## call、apply、bind 有什么区别？模拟实现。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-完整的JavaScript由三部分组成
-
-1、ECMAScript，脚本语言的标准化规范
-2、DOM 文档对象模型
-3、BOM 浏览器对象模型
-
-ECMAScript组成部分
-- 语法
-- 类型
-- 语句
-- 关键字
-- 保留字
-- 操作符
-- 对象
-
-DOM
-BOM 
-
-## 数据类型
-
-- js种有哪些数据类型，它们的区别是什么？
-
-js 的数据类型分`基本数据类型`和`引用数据类型`, 区别是基本数据类型操作值，引用数据类型操作空间地址。
-
-- 基本数据类型
-String 字符串
-Number 数值
-Boolean 布尔
-Null 
-Undefined
-Symbol 唯一标识符（ES6)
-
-- 引用数据类型
-Object 
-
-```js
-typeof ''; // string
-typeof 1; // number
-typeof true; // boolean
-typeof false; // boolean
-typeof undefined; // undefined
-typeof Symbol(); // symbol
-
-typeof null; // object
-typeof Object(); // object
-typeof []; // object
-typeof {}; // object
-
-typeof function(){}; // function
+500：服务器错误
 ```
 
-- 如何检测数据类型？
+### 整数的安全范围是多少？
 
-- `typeof null` 为什么是 object ?
-
-
-## this 指向
-
-## 什么是闭包
-
-
-
-## 深浅拷贝的区别以及实现
-
-## new 操作符原理是什么？模拟实现。
-## call、apply、bind 有什么区别？模拟实现。
-## 什么是 promise ？模拟实现。
-## 如何实现数组扁平化？
-## 如何实现数组去重？
-
-
-# 异步解决方案的发展以及优缺点
-gennerator
-promise
-async/await
-
-# set map weakSet weakMap 的区别
-
-
-## 什么是防抖节流？有什么区别？模拟实现。
-## 为什么 0.1 + 0.2 != 0.3 ？如何解决？
+```js
+// Number.MAX_SAFE_INTEGER
+2 ** 53 - 1 === Number.MAX_SAFE_INTEGER; // true
+Math.pow(2, 53) - 1 === Number.MAX_SAFE_INTEGER // true
+```

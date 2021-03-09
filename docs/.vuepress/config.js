@@ -12,28 +12,25 @@ module.exports = {
     locales: {
       '/': {
         label: '简体中文',
-        nav: [
-          {
-            text: '笔记',
-            ariaLabel: 'Reading notes',
-            items: [
-              { text: 'JavaScript', link: '/notes/JavaScript/' },
-            ]
-          },
-          // { text: '笔记', link: '/notes/' },
-          { text: 'GitHub', link: 'https://github.com/Zero2015/Front-End-Interview-Notebook' },
-        ],
-        sidebar: {
-          '/notes/': [
-            ['', '目录'],
-          ],
-          
-        }
+        nav: require('./config/nav')['zh_CN'],
+        sidebar: require('./config/sidebar')['zh_CN']
       },
     }
   },
+  extraWatchFiles: [
+    '.vuepress/config/nav.js',
+    '.vuepress/config/sidebar.js'
+  ],
+  // 博客永久链接
+  // permalink: "/:year/:month/:day/:slug",
+  // vuepress 插件
+  plugins: [
+    'flowchart'
+  ],
   // markdown 配置
   markdown: {
-    plugins: ['task-lists']
+    plugins: [
+      'task-lists',
+    ]
   }
 }
